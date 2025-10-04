@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Queue;
 
 public class ChannelListenerImpl implements ChannelListener {
-    private OrderedMessageQueueProvider orderedMessageQueueProvider;
     private Map<String, Queue<Message>> channelQueues;
     Map<String, Integer> priorities;
 
@@ -20,7 +19,6 @@ public class ChannelListenerImpl implements ChannelListener {
         if(messageQueue != null){
             messageQueue.offer(m);
             channelQueues.put(m.getSourceChannelId(), messageQueue);
-            System.out.println(messageQueue.size());
         }
     }
 }

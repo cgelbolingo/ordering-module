@@ -3,10 +3,8 @@ package org.example;
 import org.example.model.Message;
 import org.example.service.*;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Queue;
-import java.util.concurrent.BlockingQueue;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -17,11 +15,28 @@ public class Main {
 
         channelListener.messageReceived(new Message(1L, "A", "A payload test".getBytes()));
         channelListener.messageReceived(new Message(1L, "A", "A payload test".getBytes()));
+        channelListener.messageReceived(new Message(1L, "A", "A payload test".getBytes()));
+        channelListener.messageReceived(new Message(1L, "A", "A payload test".getBytes()));
+        channelListener.messageReceived(new Message(1L, "A", "A payload test".getBytes()));
+
         channelListener.messageReceived(new Message(2L, "B", "B payload test".getBytes()));
+        channelListener.messageReceived(new Message(2L, "B", "B payload test".getBytes()));
+        channelListener.messageReceived(new Message(2L, "B", "B payload test".getBytes()));
+        channelListener.messageReceived(new Message(2L, "B", "B payload test".getBytes()));
+        channelListener.messageReceived(new Message(2L, "B", "B payload test".getBytes()));
+
         channelListener.messageReceived(new Message(3L, "C", "C payload test".getBytes()));
+        channelListener.messageReceived(new Message(3L, "C", "C payload test".getBytes()));
+        channelListener.messageReceived(new Message(3L, "C", "C payload test".getBytes()));
+        channelListener.messageReceived(new Message(3L, "C", "C payload test".getBytes()));
+        channelListener.messageReceived(new Message(3L, "C", "C payload test".getBytes()));
+
+        channelListener.messageReceived(new Message(4L, "D", "D payload test".getBytes()));
+        channelListener.messageReceived(new Message(4L, "D", "D payload test".getBytes()));
+        channelListener.messageReceived(new Message(4L, "D", "D payload test".getBytes()));
+        channelListener.messageReceived(new Message(4L, "D", "D payload test".getBytes()));
         channelListener.messageReceived(new Message(4L, "D", "D payload test".getBytes()));
 
-        queueHolder.batchSendToOutputQueue();
         queueHolder.batchSendToOutputQueue();
 
         Queue<Message> outputMessages = orderedMessageQueueProvider.getOutQueue();
