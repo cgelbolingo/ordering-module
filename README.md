@@ -6,6 +6,7 @@ Assumptions:
 - Prioritization based on transfer size is used.
 - Priorities are declared by the calling function and provided when creating an instance of each class.
 - OutputQueue size will be declared externally by calling function.
+- Moving messages from channelQueue to outputQueue will be a separate action from messageReceived() and getOutQueue()
 
 Testing: 
 Tested via main class. Different testing cases are commented for reference. 
